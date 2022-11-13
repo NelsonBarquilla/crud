@@ -25,14 +25,14 @@ class CrudController extends Controller
         ]);
 
         if ($validator->passes()) {
-            $contact = new Detail;
-            $contact->name = $request->name;
-            $contact->email = $request->email;
-            $contact->mobile = $request->mobile;
-            $contact->birthday = $request->birthday;
-            $contact->age = $request->age;
-            $contact->gender = $request->gender;
-            $contact->save();
+            $detail = new Detail;
+            $detail->name = $request->name;
+            $detail->email = $request->email;
+            $detail->mobile = $request->mobile;
+            $detail->birthday = $request->birthday;
+            $detail->age = $request->age;
+            $detail->gender = $request->gender;
+            $detail->save();
 			return response()->json(['success'=>'Saved Successfully!']);
         }
     	return response()->json(['error'=>$validator->errors()->all()]);
